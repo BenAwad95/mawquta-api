@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from prayer_api import views as prayer_api_views
 urlpatterns = [
+    path('', prayer_api_views.home, name='home_page'),
     path('admin/', admin.site.urls),
 ]
