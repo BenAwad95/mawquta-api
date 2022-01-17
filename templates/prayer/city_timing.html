@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block city_name %}
+{{ city|upper }}
+{% endblock city_name %}
+
+{% block contetn %}
+<h2>Date:</h2>
+<p><b>Hijri </b> {{ hijri.date }}</p>
+<p><b>Gregorian </b> {{ gregorian.date }}</p>
+<h2>Prayer Times:</h2>
+<ul>
+    {% for name, time in timings %}
+        <li>{{ name }}: {{ time }}</li>
+    {% endfor %}
+</ul>
+{% endblock contetn %}
