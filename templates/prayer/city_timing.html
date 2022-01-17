@@ -10,7 +10,7 @@
 <p><b>Gregorian </b> {{ gregorian.date }}</p>
 <h2>Prayer Times:</h2>
 <ul>
-    {% for name, time in timings %}
+    {% for name, time in timings.items %}
         <li>{{ name }}: {{ time }}</li>
     {% endfor %}
 </ul>
