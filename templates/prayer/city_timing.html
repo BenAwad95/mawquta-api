@@ -5,6 +5,8 @@
 {% endblock city_name %}
 
 {% block content %}
+<h2>City: </h2>
+<b>{{ city }}</b> <small><a href="{% url 'select_city' %}">Change city</a></small>
 <h2>Date:</h2>
 <p><b>Hijri </b> {{ hijri.date }}</p>
 <p><b>Gregorian </b> {{ gregorian.date }}</p>
