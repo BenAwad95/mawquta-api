@@ -1,2 +1,2 @@
-# mawquta-api
-An app for prayers times
+# mawquta
+An app for prayers times, 
