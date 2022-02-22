@@ -15,12 +15,7 @@ def home(request, city='ma'):
     result = requests.get(f"http://api.aladhan.com/v1/timingsByCity?\
         method={method}&city={city}&country={country}")
     data = result.json()
-    # print(type(data))
-    # data = json.dumps(data)
-    # print(type(data))
     data = data['data']
-    # return HttpResponse(data)
-    # return JsonResponse(data)
     return render(
         request, 'prayer/city_timing.html',
         context={
@@ -29,6 +24,7 @@ def home(request, city='ma'):
             'gregorian': data['date']['gregorian'],
             'timings': data['timings']}
         )
+
 
 # The two return all works.
 def select_city(request):

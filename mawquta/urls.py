@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, re_path
 from prayer_api import views as prayer_api_views
 urlpatterns = [
-#     path('', prayer_api_views.home, name='home'),
-    re_path(r'^prayer-times/$', prayer_api_views.home, name='home'), # by default Jeddah city.
-    re_path(r'^prayer-times/(?P<city>[a-z]{2})/$', prayer_api_views.home, name='home'),
+    # path('', prayer_api_views.home, name='home'),
+    re_path(r'^prayer-times/$', prayer_api_views.home, name='home'),  # by \
+    # default Jeddah city.
+    re_path(r'^prayer-times/(?P<city>[a-z]{2})/$', prayer_api_views.home,
+            name='home'),
     path('select-city/', prayer_api_views.select_city, name='select_city'),
     path('admin/', admin.site.urls),
 ]
