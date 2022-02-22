@@ -11,7 +11,7 @@ CITES = {
     'ma': 'Makkah'
 }
 
-def home(request, city='ja):
+def home(request, city='ja'):
     print(city)
     city = CITES.get(city)
     country = 'Saudi Arabia'
@@ -34,13 +34,14 @@ def home(request, city='ja):
             'timings': data['timings']}
         )
 
-
+# The two return all works.
 def select_city(request):
     if request.method == 'POST':
         form = SelectCityForm(request.POST)
         if form.is_valid():
-            # print(form.cleaned_data)
             selected_city = form.cleaned_data.get('city')
-            return redirect(reverse_lazy('home', args={'city': selected_city}))
+            return redirect(reverse_lazy('home', args=[selected_city]))
+            # return redirect(reverse_lazy('home', kwargs={'city': selected_city})) 
+
     form = SelectCityForm()
     return render(request, 'select_city.html', context={'form': form})
