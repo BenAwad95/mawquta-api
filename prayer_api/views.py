@@ -1,15 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from .forms import SelectCityForm
+from .forms import SelectCityForm, CITES
 import requests
 
-from prayer_api import forms
 
-CITES = {
-    'ja': 'Jeddah',
-    'ma': 'Makkah'
-}
+CITES = dict(CITES)
+
 
 def home(request, city='ma'):
     city = CITES.get(city)
