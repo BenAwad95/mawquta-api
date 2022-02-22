@@ -11,8 +11,7 @@ CITES = {
     'ma': 'Makkah'
 }
 
-def home(request, city='ja'):
-    print(city)
+def home(request, city='ma'):
     city = CITES.get(city)
     country = 'Saudi Arabia'
     method = 4
